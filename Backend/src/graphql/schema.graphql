@@ -1,0 +1,20 @@
+scalar Date
+
+type Query {
+    ping: String!
+    #Colocamos ! para indicar que nos regrese la lista de Message
+    messages: [Message!]
+}
+
+type Mutation {
+    createMessage(title: String!, content: String!, author: String!): Message
+}
+
+type Message {
+    _id: ID!
+    title: String!
+    content: String!
+    author: String!
+    createdAt: Date
+    updatedAt: Date
+}
